@@ -441,7 +441,7 @@ class Feed (object):
     def _html2text(self, html, baseurl='', default=None):
         self.config.setup_html2text(section=self.section)
         try:
-            return _html2text.html2text(html=html, baseurl=baseurl)
+            return _html2text.html2text(html=html, baseurl=baseurl, bodywidth=_html2text.BODY_WIDTH)
         except _html_parser.HTMLParseError as e:
             if default is not None:
                 return default
